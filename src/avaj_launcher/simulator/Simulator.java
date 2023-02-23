@@ -19,7 +19,7 @@ public class Simulator {
     static int lineNum = 0;
     static String filename = null;
     static AircraftFactory aircraftFactory = AircraftFactory.getInstance();
-    static WeatherTower weatherTower;
+    static WeatherTower weatherTower = new WeatherTower();
 
     private static void printScenarioError(String message) {
         System.err.println("Invalid line " + lineNum + " in the file " + filename + ": " + message);
@@ -112,6 +112,11 @@ public class Simulator {
     public static void Launch() {
         for (Flyable flyable : flyables) {
             weatherTower.register(flyable);
+            flyable.registerTower(weatherTower);
+        }
+
+        while (--simulation_cycles >= 0) {
+            weatherTower.conditionChanged();
         }
     }
 

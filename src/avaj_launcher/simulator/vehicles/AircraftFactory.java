@@ -2,7 +2,7 @@ package src.avaj_launcher.simulator.vehicles;
 
 public class AircraftFactory {
     private static AircraftFactory instance = null;
-    private static long id = 0;
+    private static long id = 1;
 
     static public class InvalidFlyableType extends Exception {
         public InvalidFlyableType(String message) {

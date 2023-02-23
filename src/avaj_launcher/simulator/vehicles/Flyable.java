@@ -3,7 +3,7 @@ package src.avaj_launcher.simulator.vehicles;
 import src.avaj_launcher.simulator.WeatherTower;
 
 public interface Flyable {
-    public WeatherTower weatherTower = null;
+    WeatherTower weatherTower = null;
 
     abstract void updateConditions();
 

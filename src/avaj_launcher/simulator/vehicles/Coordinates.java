@@ -31,4 +31,16 @@ public class Coordinates {
     public int getHeight() {
         return height;
     }
+
+    public void updateLongitude(int delta) {
+        this.longitude += delta;
+    }
+
+    public void updateLatitude(int delta) {
+        this.latitude += delta;
+    }
+
+    public void updateHeight(int delta) {
+        this.height += delta;
+    }
 }
