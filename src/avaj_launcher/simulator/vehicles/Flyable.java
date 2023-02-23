@@ -6,5 +6,15 @@ public interface Flyable {
     public WeatherTower weatherTower = null;
 
     abstract void updateConditions();
+
     public void registerTower(WeatherTower p_tower);
+
+    public long getId();
+
+    public String getName();
+
+    public Coordinates getCoordinates();
+
+    public String getType();
+
 }

@@ -9,6 +9,7 @@ public class Tower {
 
     public void register(Flyable p_flyable) {
         observers.add(p_flyable);
+        Logger.print(this, null);
     }
 
     public void unregister(Flyable p_flyable) {

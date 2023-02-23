@@ -4,16 +4,23 @@ public class AircraftFactory {
     private static AircraftFactory instance = null;
     private static long id = 0;
 
-    private AircraftFactory() {}
+    static public class InvalidFlyableType extends Exception {
+        public InvalidFlyableType(String message) {
+            super(message);
+        }
+    }
 
-    public AircraftFactory getInstance() {
+    private AircraftFactory() {
+    }
+
+    public static AircraftFactory getInstance() {
         if (instance == null) {
             instance = new AircraftFactory();
         }
         return instance;
     }
 
-    public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) {
+    public Flyable newAircraft(String p_type, String p_name, Coordinates p_coordinates) throws InvalidFlyableType {
         switch (p_type) {
             case "Helicopter":
                 return new Helicopter(id++, p_name, p_coordinates);
@@ -22,8 +29,7 @@ public class AircraftFactory {
             case "Baloon":
                 return new Baloon(id++, p_name, p_coordinates);
             default:
-                System.err.println("Cannot create Aircraft of type " + p_type);
-                return null;
+                throw new InvalidFlyableType("Cannot create Aircraft of type " + p_type);
         }
     }
 }

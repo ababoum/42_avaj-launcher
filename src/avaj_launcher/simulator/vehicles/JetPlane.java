@@ -14,4 +14,21 @@ public class JetPlane extends Aircraft implements Flyable {
     public void registerTower(WeatherTower p_tower) {
 
     }
+
+    public long getId() {
+        return this.id;
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public Coordinates getCoordinates() {
+        return this.coordinates;
+    }
+
+    public String getType() {
+        return "JetPlane";
+    }
+
 }

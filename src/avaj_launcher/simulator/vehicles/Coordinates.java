@@ -5,7 +5,16 @@ public class Coordinates {
     private int latitude;
     private int height;
 
-    public Coordinates(int longitude, int latitude, int height) {
+    static public class InvalidCoordinates extends Exception {
+        public InvalidCoordinates() {
+            super("Coordinates must be positive integers");
+        }
+    }
+
+    public Coordinates(int longitude, int latitude, int height) throws InvalidCoordinates {
+        if (longitude < 0 || latitude < 0 || height < 0) {
+            throw new InvalidCoordinates();
+        }
         this.longitude = longitude;
         this.latitude = latitude;
         this.height = height;
@@ -22,5 +31,4 @@ public class Coordinates {
     public int getHeight() {
         return height;
     }
-
 }
