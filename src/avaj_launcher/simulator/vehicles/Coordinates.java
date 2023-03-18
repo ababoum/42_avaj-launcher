@@ -7,12 +7,12 @@ public class Coordinates {
 
     static public class InvalidCoordinates extends Exception {
         public InvalidCoordinates() {
-            super("Coordinates must be positive integers");
+            super("Coordinates must be positive integers and height must be between 0 and 100");
         }
     }
 
     public Coordinates(int longitude, int latitude, int height) throws InvalidCoordinates {
-        if (longitude < 0 || latitude < 0 || height < 0) {
+        if (longitude < 0 || latitude < 0 || height < 0 || height > 100) {
             throw new InvalidCoordinates();
         }
         this.longitude = longitude;
@@ -41,6 +41,11 @@ public class Coordinates {
     }
 
     public void updateHeight(int delta) {
-        this.height += delta;
+        if (this.height + delta > 100)
+            this.height = 100;
+        else if (this.height + delta <= 0)
+            this.height = 0;
+        else
+            this.height += delta;
     }
 }

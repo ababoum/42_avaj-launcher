@@ -10,7 +10,7 @@ public class Main {
             System.out.println("Usage: java Main scenario.txt");
             return;
         }
-        if (Simulator.Prepare(args[0]) < 0) {
+        if (Simulator.Prepare(args[0]) == 1) {
             return;
         }
         try {

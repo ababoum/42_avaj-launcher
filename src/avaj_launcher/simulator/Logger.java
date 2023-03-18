@@ -29,11 +29,11 @@ public class Logger {
     }
 
     static public void towerAnnouncesRegistration(Flyable registree) {
-        System.out.println("Tower says: " + flyableLabel(registree) + "registered to weather tower.");
+        System.out.println("Tower says: " + flyableLabel(registree) + " registered to weather tower.");
     }
 
     static public void towerAnnouncesUnregistration(Flyable registree) {
-        System.out.println("Tower says: " + flyableLabel(registree) + "unregistered from weather tower.");
+        System.out.println("Tower says: " + flyableLabel(registree) + " unregistered from weather tower.");
     }
 
     static public void update(Flyable broadcaster, String action) {

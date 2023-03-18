@@ -81,16 +81,12 @@ public class Simulator {
                     newAircraft = aircraftFactory.newAircraft(parts[0], parts[1], coordinates);
                 } catch (InvalidFlyableType e) {
                     printScenarioError(e.getMessage());
+                    return 1;
                 }
                 flyables.add(newAircraft);
                 line = reader.readLine();
             }
             reader.close();
-            // for (Flyable flyable: flyables) {
-            // if (flyable instanceof Aircraft) {
-            // System.out.println(flyable.getName());
-            // }
-            // }
             return 0;
         } catch (FileNotFoundException e) {
             System.err.println("File " + filename + " not found");

@@ -1,11 +1,16 @@
 package src.avaj_launcher.simulator;
 
 import src.avaj_launcher.simulator.vehicles.Coordinates;
+import src.avaj_launcher.simulator.WeatherProvider;
 
 public class WeatherTower extends Tower {
-    public String getWeather(Coordinates p_coordinates) {
-        WeatherProvider weatherProvider = WeatherProvider.getInstance();
+    private WeatherProvider weatherProvider = WeatherProvider.getInstance();
 
-        return weatherProvider.getCurrentWeather(p_coordinates);
+    public String getWeather(Coordinates p_coordinates) {
+        return this.weatherProvider.getCurrentWeather(p_coordinates);
+    }
+
+    public void changeWeather() {
+        // Do nothing
     }
 }

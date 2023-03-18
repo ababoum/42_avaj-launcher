@@ -41,7 +41,7 @@ class Aircraft
 #Aircraft(long p_id, string p_name, Coordinates p_coordinate)
 }
 
-interface Flyable <<Interface>>
+abstract Flyable
 {
 #WeatherTower weatherTower
 +abstract void updateConditions()
