@@ -15,7 +15,6 @@ public class Tower {
     }
 
     public void unregister(Flyable p_flyable) {
-        // observers.remove(p_flyable);
         Logger.towerAnnouncesUnregistration(p_flyable);
     }
 
