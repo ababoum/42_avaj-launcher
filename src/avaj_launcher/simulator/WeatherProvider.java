@@ -4,7 +4,7 @@ import src.avaj_launcher.simulator.vehicles.Coordinates;
 
 public class WeatherProvider {
     private static WeatherProvider instance = null;
-    private String[] weather = { "SUN", "FOG", "SUN", "SNOW" };
+    private String[] weather = { "SUN", "RAIN", "FOG", "SNOW" };
 
     private WeatherProvider() {
     }
